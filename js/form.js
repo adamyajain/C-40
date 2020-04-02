@@ -14,10 +14,10 @@ class Form{
   fill("blue");
   stroke(20)
   title.html("MULTIPLAYER GAME");
- title.position(130,0);
+ title.position(displayWidth/2,0);
   fill("blue");
-  this.input.position(130,160);
-  this.button.position(250,200);
+  this.input.position(displayWidth/2-30,displayHeight/2);
+  this.button.position(displayWidth/2+110,displayHeight/2);
   this.button.mousePressed(() =>{
       this.input.hide();
      this.button.hide();
@@ -26,8 +26,8 @@ class Form{
       player.index = playerCount;
       player.update();
       player.updateCount(playerCount);
-      this.greeting.html("welcome"+player.name);
-      this.greeting.position(130,160);
+      this.greeting.html("welcome "+player.name);
+      this.greeting.position(displayWidth/2,displayHeight/4);
   })
  }
 }
