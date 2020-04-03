@@ -24,9 +24,13 @@ class Game{
             form.display();
         }
         car1 = createSprite(100,200);
+        car1.addImage("car1",car1img)
         car2 = createSprite(300,200);
+        car2.addImage("car2",car2img);
         car3 = createSprite(500,200);
+        car3.addImage("car3",car3img)
         car4 = createSprite(700,200);
+        car4.addImage("car4",car4img);
         cars = [car1,car2,car3,car4];
     }
     play(){
@@ -34,16 +38,18 @@ class Game{
         Player.getPlayerInfo();
     
         if(allPlayers !== undefined){
+          background("white");
+          image(track,0,-displayHeight*4,displayWidth,displayHeight*5);
           //index of the array
           var index = 0;
           // x and y positions of cars
-          var x = 0;
+          var x = 350;
           var y;
           for(var plr in allPlayers){
             //add 1 to the index for every for loop
             index = index+1
             //position :the cars are away from each other in x direction
-            x = x+200;
+            x = x+250;
             //use the data from the database to change the Y position
             y = displayHeight-allPlayers[plr].distance;
             cars[index-1].x = x;
